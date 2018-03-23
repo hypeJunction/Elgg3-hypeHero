@@ -2,20 +2,6 @@
 	max-width: none;
 }
 
-/*.elgg-page-topbar .elgg-menu li > a {*/
-/*text-transform: uppercase;*/
-/*font-weight: 300;*/
-/*font-size: 75%;*/
-/*letter-spacing: 1px;*/
-/*text-shadow: 1px 1px #000;*/
-/*}*/
-
-/*.elgg-nav-logo h1 {*/
-/*font-weight: 300;*/
-/*letter-spacing: 1px;*/
-/*text-shadow: 1px 1px #000;*/
-/*}*/
-
 .cover-hero {
 	position: relative;
 	min-height: 20rem;
@@ -40,9 +26,7 @@
 	padding: 0 1rem;
 }
 
-@media $(media-desktop-up
-
-) {
+@media $(media-desktop-up) {
 	.cover-hero-header, .cover-hero-body {
 		padding: 0;
 	}
@@ -87,7 +71,7 @@
 
 .elgg-menu-hero > li:hover > a,
 .elgg-menu-hero > li.elgg-state-selected > a {
-	border-bottom-color: #0078ac;
+	border-bottom-color: $(border-color-highlight);
 }
 
 .cover-hero .cover-owner-details {
