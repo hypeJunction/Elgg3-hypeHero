@@ -136,6 +136,42 @@ class CoverMenu {
 			}
 		}
 
+		$entity_menu = elgg()->menus->getUnpreparedMenu('entity', [
+			'entity' => $entity,
+		]);
+
+		$entity_menu_items = $entity_menu->getItems();
+
+		if (!empty($entity_menu_items)) {
+
+			$parent = $entity->canEdit() ? 'edit' : 'entity';
+
+			foreach ($entity_menu_items as $item) {
+				$item->setParentName($parent);
+				$menu[] = $item;
+			}
+
+			if ($parent === 'entity') {
+				$menu[] = \ElggMenuItem::factory([
+					'name' => 'entity',
+					'href' => '#',
+					'text' => '',
+					'icon' => 'hand-pointer-o',
+					'child_menu' => [
+						'display' => 'dropdown',
+						'class' => 'elgg-menu-hover',
+						'data-position' => json_encode([
+							'at' => 'right bottom',
+							'my' => 'right top+8px',
+							'collision' => 'fit fit',
+						]),
+						'id' => 'hero-entity-menu',
+					],
+				]);
+			}
+
+		}
+
 		return $menu;
 
 	}
