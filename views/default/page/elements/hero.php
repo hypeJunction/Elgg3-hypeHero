@@ -9,11 +9,12 @@ if ($entity instanceof ElggSite) {
     return;
 }
 
+elgg_require_js('page/elements/hero');
+
 $cover_url = $entity->getIconUrl([
 	'type' => 'cover',
 	'size' => 'hero',
 ]);
-
 
 $gravity = $cover->{'cover:gravity'} ? : 'center';
 

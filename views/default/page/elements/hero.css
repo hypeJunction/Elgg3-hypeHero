@@ -4,7 +4,10 @@
 
 .cover-hero {
 	position: relative;
-	min-height: 20rem;
+	min-height: $(profile-cover-height, 16rem);
+	max-width: 100% !important;
+	width: 100% !important;
+	left: 0 !important;
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: column;
@@ -55,6 +58,7 @@
 	font-size: 0.8rem;
 	letter-spacing: 1px;
 	font-weight: 300;
+
 }
 
 .cover-hero-header {
@@ -72,6 +76,10 @@
 .elgg-menu-hero > li:hover > a,
 .elgg-menu-hero > li.elgg-state-selected > a {
 	border-bottom-color: $(border-color-highlight);
+}
+
+.elgg-menu-cover > li > a:after {
+	display: none !important;
 }
 
 .cover-hero .cover-owner-details {
@@ -272,4 +280,18 @@
 
 .cover-hero-footer .cover-attribution .cover-provider {
 	margin-left: 0.5rem;
+}
+
+@media $(media-tablet-up) {
+	.cover-hero .ui-resizable-sw:after {
+		content: "\25e2";
+		color: #fff;
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		line-height: 1rem;
+		font-size: 1rem;
+		margin: 0;
+		cursor: row-resize;
+	}
 }
