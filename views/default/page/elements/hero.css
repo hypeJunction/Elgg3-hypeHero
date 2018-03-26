@@ -12,6 +12,7 @@
 	flex-wrap: wrap;
 	flex-direction: column;
 	justify-content: flex-end;
+	padding-top: 1rem;
 }
 
 .cover-hero .cover-image {
