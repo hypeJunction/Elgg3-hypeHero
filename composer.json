@@ -24,8 +24,5 @@
 		"psr-0": {
 			"": "classes/"
 		}
-	},
-    "scripts": {
-        "picsum": "php -f ./scripts/picsum.php"
-    }
+	}
 }

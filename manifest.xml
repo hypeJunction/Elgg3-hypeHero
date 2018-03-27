@@ -17,5 +17,10 @@
         <type>elgg_release</type>
         <version>3.0</version>
     </requires>
-    
+
+    <suggests>
+        <type>plugin</type>
+        <name>hypeIllustration</name>
+    </suggests>
+
 </plugin_manifest>

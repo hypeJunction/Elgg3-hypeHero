@@ -76,21 +76,6 @@ class CoverMenu {
 				])
 			]);
 
-			$menu[] = \ElggMenuItem::factory([
-				'name' => 'cover:pick',
-				'parent_name' => 'cover',
-				'text' => elgg_echo('hero:cover:pick'),
-				'icon' => 'image',
-				'href' => elgg_generate_url('cover:pick', [
-					'guid' => $entity->guid,
-				]),
-				'class' => 'elgg-lightbox',
-				'data-colorbox-opts' => json_encode([
-					'width' => '600px',
-					'className' => 'hero-cover-lightbox',
-				])
-			]);
-
 			if ($entity instanceof \ElggUser) {
 				$menu[] = \ElggMenuItem::factory([
 					'name' => 'profile:edit',
