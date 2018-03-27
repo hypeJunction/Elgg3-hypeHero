@@ -1,3 +1,13 @@
+<a name="1.0.6"></a>
+## [1.0.6](https://github.com/hypeJunctionPro/Elgg3-hypeHero/compare/1.0.5...1.0.6) (2018-03-27)
+
+
+### Bug Fixes
+
+* **upload:** reset attribution when uploading new photo ([d317bde](https://github.com/hypeJunctionPro/Elgg3-hypeHero/commit/d317bde))
+
+
+
 <a name="1.0.5"></a>
 ## [1.0.5](https://github.com/hypeJunctionPro/Elgg3-hypeHero/compare/1.0.4...1.0.5) (2018-03-27)
 
