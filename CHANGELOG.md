@@ -1,3 +1,14 @@
+<a name="1.0.5"></a>
+## [1.0.5](https://github.com/hypeJunctionPro/Elgg3-hypeHero/compare/1.0.4...1.0.5) (2018-03-27)
+
+
+### Bug Fixes
+
+* **css:** add some padding ([dbfb60c](https://github.com/hypeJunctionPro/Elgg3-hypeHero/commit/dbfb60c))
+* **vendor:** drop experimental support for Picsum ([a60dd65](https://github.com/hypeJunctionPro/Elgg3-hypeHero/commit/a60dd65))
+
+
+
 <a name="1.0.4"></a>
 ## [1.0.4](https://github.com/hypeJunctionPro/Elgg3-hypeHero/compare/1.0.3...1.0.4) (2018-03-26)
 
