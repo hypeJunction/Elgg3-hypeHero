@@ -1,10 +1,12 @@
 .elgg-page-default .elgg-page-header > .elgg-inner {
 	max-width: none;
+	padding: 0 !important;
+	margin: 0 !important;
 }
 
 .cover-hero {
 	position: relative;
-	min-height: $(profile-cover-height, 16rem);
+	min-height: $(profile-cover-height, 16rem) !important;
 	max-width: 100% !important;
 	width: 100% !important;
 	left: 0 !important;
