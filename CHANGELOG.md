@@ -1,3 +1,13 @@
+<a name="1.0.7"></a>
+## [1.0.7](https://github.com/hypeJunctionPro/Elgg3-hypeHero/compare/1.0.6...1.0.7) (2018-03-31)
+
+
+### Bug Fixes
+
+* **css:** update styling ([760bab3](https://github.com/hypeJunctionPro/Elgg3-hypeHero/commit/760bab3))
+
+
+
 <a name="1.0.6"></a>
 ## [1.0.6](https://github.com/hypeJunctionPro/Elgg3-hypeHero/compare/1.0.5...1.0.6) (2018-03-27)
 
