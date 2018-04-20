@@ -1,3 +1,13 @@
+<a name="1.0.9"></a>
+## [1.0.9](https://github.com/hypeJunctionPro/Elgg3-hypeHero/compare/1.0.8...1.0.9) (2018-04-20)
+
+
+### Bug Fixes
+
+* **menus:** do not pass items by reference ([d253388](https://github.com/hypeJunctionPro/Elgg3-hypeHero/commit/d253388))
+
+
+
 <a name="1.0.8"></a>
 ## [1.0.8](https://github.com/hypeJunctionPro/Elgg3-hypeHero/compare/1.0.7...1.0.8) (2018-04-20)
 
