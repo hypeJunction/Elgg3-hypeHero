@@ -41,7 +41,7 @@ class HeroMenu {
 
 		$selected_segment = $get_first_segment(current_page_url());
 
-		foreach ($menu as &$item) {
+		foreach ($menu as $item) {
 			/* @var $item \ElggMenuItem */
 			$url = elgg_normalize_url($item->getHref());
 
