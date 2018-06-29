@@ -16,7 +16,7 @@ $cover_url = $entity->getIconUrl([
 	'size' => 'hero',
 ]);
 
-$gravity = $cover->{'cover:gravity'} ? : 'center';
+$gravity = $entity->{'cover:gravity'} ? : 'center';
 
 $positions = [
 	'center' => '50% 50%',
