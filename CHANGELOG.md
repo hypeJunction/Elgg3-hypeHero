@@ -1,3 +1,26 @@
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/hypeJunctionPro/Elgg3-hypeHero/compare/1.0.0...2.0.0) (2018-06-29)
+
+
+### Bug Fixes
+
+* **css:** add some padding ([dbfb60c](https://github.com/hypeJunctionPro/Elgg3-hypeHero/commit/dbfb60c))
+* **css:** fix selected tab border color ([df6f3b5](https://github.com/hypeJunctionPro/Elgg3-hypeHero/commit/df6f3b5))
+* **css:** update styling ([760bab3](https://github.com/hypeJunctionPro/Elgg3-hypeHero/commit/760bab3))
+* **menu:** add entity menu items to the hero menu ([9ae5011](https://github.com/hypeJunctionPro/Elgg3-hypeHero/commit/9ae5011))
+* **menus:** do not pass items by reference ([d253388](https://github.com/hypeJunctionPro/Elgg3-hypeHero/commit/d253388))
+* **menus:** set higher priorities on cover menus ([21ab995](https://github.com/hypeJunctionPro/Elgg3-hypeHero/commit/21ab995))
+* **ui:** improve user experience ([32ab561](https://github.com/hypeJunctionPro/Elgg3-hypeHero/commit/32ab561))
+* **upload:** reset attribution when uploading new photo ([d317bde](https://github.com/hypeJunctionPro/Elgg3-hypeHero/commit/d317bde))
+* **vendor:** drop experimental support for Picsum ([a60dd65](https://github.com/hypeJunctionPro/Elgg3-hypeHero/commit/a60dd65))
+
+
+### Features
+
+* **core:** updates and fixes ([3d0108e](https://github.com/hypeJunctionPro/Elgg3-hypeHero/commit/3d0108e))
+
+
+
 <a name="1.0.9"></a>
 ## [1.0.9](https://github.com/hypeJunctionPro/Elgg3-hypeHero/compare/1.0.8...1.0.9) (2018-04-20)
 
