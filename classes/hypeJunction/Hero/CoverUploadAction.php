@@ -2,7 +2,7 @@
 
 namespace hypeJunction\Hero;
 
-use Elgg\EntityPermissionsException;
+use Elgg\Exceptions\Http\EntityPermissionsException;
 use Elgg\Http\ResponseBuilder;
 use Elgg\Request;
 
