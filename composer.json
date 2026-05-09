@@ -2,7 +2,7 @@
 	"name": "hypejunction/hypehero",
 	"type": "elgg-plugin",
 	"description": "Replaces the owner block with a full-width cover hero image for profiles and groups.",
-	"homepage": "https://github.com/hypeJunction/hypehero",
+	"homepage": "https://github.com/hypeJunction/Elgg3-hypeHero",
 	"keywords": [
 		"elgg",
 		"plugin",

@@ -1,7 +1,7 @@
 {
 	"name": "hypeHero",
 	"version": "2.0.0",
-	"license": "SEE LICENSE IN https://hypejunction.com/license",
+	"license": "SEE LICENSE IN https://github.com/hypeJunction/hypehero",
 	"repository": {
 		"type": "git",
 		"url": "git@github.com:hypeJunctionPro/Elgg3-hypeHero.git",
