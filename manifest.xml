@@ -3,15 +3,15 @@
 
     <name>hypeHero</name>
     <id>hypeHero</id>
-    <description>Replaces owner block with a hero</description>
+    <description>Replaces the owner block with a full-width cover hero image for profiles and groups.</description>
    <version type="dist">2.0.0</version>
 
     <category>theme</category>
 
-    <author>Ismayil Khayredinov (info@hypejunction.com)</author>
-    <website>http://hypeJunction.com</website>
+    <author>Ismayil Khayredinov (ismayil.khayredinov@gmail.com)</author>
+    <website>https://github.com/hypeJunction/hypehero</website>
     <copyright>2018 (c) Ismayil Khayredinov</copyright>
-    <license>https://hypejunction.com/license</license>
+    <license>https://github.com/hypeJunction/hypehero</license>
 
     <requires>
         <type>elgg_release</type>

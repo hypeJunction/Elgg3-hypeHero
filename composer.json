@@ -1,16 +1,19 @@
 {
 	"name": "hypejunction/hypehero",
 	"type": "elgg-plugin",
-	"description": "Replaces owner block with cover hero",
-	"homepage": "http://hypejunction.com",
+	"description": "Replaces the owner block with a full-width cover hero image for profiles and groups.",
+	"homepage": "https://github.com/hypeJunction/hypehero",
 	"keywords": [
-		"elgg", "plugin", "autocomplete", "forms"
+		"elgg",
+		"plugin",
+		"autocomplete",
+		"forms"
 	],
 	"license": "proprietary",
 	"authors": [
 		{
 			"name": "Ismayil Khayredinov",
-			"email": "info@hypejunction.com"
+			"email": "ismayil.khayredinov@gmail.com"
 		}
 	],
 	"extra": {
