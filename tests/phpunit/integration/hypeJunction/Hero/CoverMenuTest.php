@@ -2,7 +2,7 @@
 
 namespace hypeJunction\Hero;
 
-use Elgg\Hook;
+use Elgg\Event;
 use Elgg\IntegrationTestCase;
 
 class CoverMenuTest extends IntegrationTestCase {
@@ -18,12 +18,12 @@ class CoverMenuTest extends IntegrationTestCase {
 	}
 
 	public function testReturnsNullWhenEntityParamMissing(): void {
-		$hook = $this->getMockBuilder(Hook::class)->getMock();
-		$hook->method('getValue')->willReturn([]);
-		$hook->method('getEntityParam')->willReturn(null);
+		$event = $this->getMockBuilder(Event::class)->disableOriginalConstructor()->getMock();
+		$event->method('getValue')->willReturn([]);
+		$event->method('getEntityParam')->willReturn(null);
 
 		$handler = new CoverMenu();
-		$result = $handler($hook);
+		$result = $handler($event);
 
 		$this->assertNull($result);
 	}
@@ -32,35 +32,35 @@ class CoverMenuTest extends IntegrationTestCase {
 		$user = $this->createUser();
 
 		// Logged-in user is the entity owner — canEdit() returns true.
-		elgg_get_session()->setLoggedInUser($user);
+		_elgg_services()->session_manager->setLoggedInUser($user);
 
 		try {
-			$hook = $this->getMockBuilder(Hook::class)->getMock();
-			$hook->method('getValue')->willReturn([]);
-			$hook->method('getEntityParam')->willReturn($user);
+			$event = $this->getMockBuilder(Event::class)->disableOriginalConstructor()->getMock();
+			$event->method('getValue')->willReturn([]);
+			$event->method('getEntityParam')->willReturn($user);
 
 			$handler = new CoverMenu();
-			$result = $handler($hook);
+			$result = $handler($event);
 
 			$this->assertIsArray($result);
 			$names = array_map(fn(\ElggMenuItem $i) => $i->getName(), $result);
 			$this->assertContains('cover:upload', $names);
 		} finally {
-			elgg_get_session()->removeLoggedInUser();
+			_elgg_services()->session_manager->removeLoggedInUser();
 		}
 	}
 
 	public function testCoverUploadHrefMatchesGeneratedRoute(): void {
 		$user = $this->createUser();
-		elgg_get_session()->setLoggedInUser($user);
+		_elgg_services()->session_manager->setLoggedInUser($user);
 
 		try {
-			$hook = $this->getMockBuilder(Hook::class)->getMock();
-			$hook->method('getValue')->willReturn([]);
-			$hook->method('getEntityParam')->willReturn($user);
+			$event = $this->getMockBuilder(Event::class)->disableOriginalConstructor()->getMock();
+			$event->method('getValue')->willReturn([]);
+			$event->method('getEntityParam')->willReturn($user);
 
 			$handler = new CoverMenu();
-			$result = $handler($hook);
+			$result = $handler($event);
 
 			$upload = null;
 			foreach ($result as $item) {
@@ -74,7 +74,7 @@ class CoverMenuTest extends IntegrationTestCase {
 			$expected = elgg_generate_url('cover:upload', ['guid' => $user->guid]);
 			$this->assertSame($expected, $upload->getHref());
 		} finally {
-			elgg_get_session()->removeLoggedInUser();
+			_elgg_services()->session_manager->removeLoggedInUser();
 		}
 	}
 }

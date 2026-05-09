@@ -2,7 +2,7 @@
 
 namespace hypeJunction\Hero;
 
-use Elgg\Hook;
+use Elgg\Event;
 use Elgg\IntegrationTestCase;
 
 class DefineCoverSizesTest extends IntegrationTestCase {
@@ -18,11 +18,11 @@ class DefineCoverSizesTest extends IntegrationTestCase {
 	}
 
 	public function testReturnsFullSizeMapWhenInputIsEmpty(): void {
-		$hook = $this->getMockBuilder(Hook::class)->getMock();
-		$hook->method('getValue')->willReturn([]);
+		$event = $this->getMockBuilder(Event::class)->disableOriginalConstructor()->getMock();
+		$event->method('getValue')->willReturn([]);
 
 		$handler = new DefineCoverSizes();
-		$result = $handler($hook);
+		$result = $handler($event);
 
 		$this->assertIsArray($result);
 		$this->assertArrayHasKey('hero', $result);
@@ -34,11 +34,11 @@ class DefineCoverSizesTest extends IntegrationTestCase {
 	}
 
 	public function testHeroSizeIsTwoThousandByFourHundred(): void {
-		$hook = $this->getMockBuilder(Hook::class)->getMock();
-		$hook->method('getValue')->willReturn([]);
+		$event = $this->getMockBuilder(Event::class)->disableOriginalConstructor()->getMock();
+		$event->method('getValue')->willReturn([]);
 
 		$handler = new DefineCoverSizes();
-		$result = $handler($hook);
+		$result = $handler($event);
 
 		$this->assertSame(2000, $result['hero']['w']);
 		$this->assertSame(400, $result['hero']['h']);
@@ -47,13 +47,13 @@ class DefineCoverSizesTest extends IntegrationTestCase {
 	}
 
 	public function testInjectsHeroSizeWhenInputAlreadyHasOtherSizes(): void {
-		$hook = $this->getMockBuilder(Hook::class)->getMock();
-		$hook->method('getValue')->willReturn([
+		$event = $this->getMockBuilder(Event::class)->disableOriginalConstructor()->getMock();
+		$event->method('getValue')->willReturn([
 			'thumb' => ['w' => 100, 'h' => 100, 'square' => true, 'upscale' => true],
 		]);
 
 		$handler = new DefineCoverSizes();
-		$result = $handler($hook);
+		$result = $handler($event);
 
 		$this->assertArrayHasKey('thumb', $result);
 		$this->assertArrayHasKey('hero', $result);

@@ -2,7 +2,7 @@
 
 namespace hypeJunction\Hero;
 
-use Elgg\Hook;
+use Elgg\Event;
 use Elgg\IntegrationTestCase;
 
 class ActionsMenuTest extends IntegrationTestCase {
@@ -18,12 +18,12 @@ class ActionsMenuTest extends IntegrationTestCase {
 	}
 
 	public function testReturnsNullWhenEntityParamMissing(): void {
-		$hook = $this->getMockBuilder(Hook::class)->getMock();
-		$hook->method('getValue')->willReturn([]);
-		$hook->method('getEntityParam')->willReturn(null);
+		$event = $this->getMockBuilder(Event::class)->disableOriginalConstructor()->getMock();
+		$event->method('getValue')->willReturn([]);
+		$event->method('getEntityParam')->willReturn(null);
 
 		$handler = new ActionsMenu();
-		$result = $handler($hook);
+		$result = $handler($event);
 
 		$this->assertNull($result);
 	}
@@ -38,12 +38,12 @@ class ActionsMenuTest extends IntegrationTestCase {
 			\ElggMenuItem::factory(['name' => 'keep_me', 'text' => 'keep', 'href' => '#']),
 		];
 
-		$hook = $this->getMockBuilder(Hook::class)->getMock();
-		$hook->method('getValue')->willReturn($incoming);
-		$hook->method('getEntityParam')->willReturn($user);
+		$event = $this->getMockBuilder(Event::class)->disableOriginalConstructor()->getMock();
+		$event->method('getValue')->willReturn($incoming);
+		$event->method('getEntityParam')->willReturn($user);
 
 		$handler = new ActionsMenu();
-		$result = $handler($hook);
+		$result = $handler($event);
 
 		$names = array_map(fn(\ElggMenuItem $i) => $i->getName(), $result);
 

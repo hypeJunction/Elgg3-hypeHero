@@ -2,7 +2,7 @@
 
 namespace hypeJunction\Hero;
 
-use Elgg\Hook;
+use Elgg\Event;
 
 class CoverMenu {
 
@@ -11,14 +11,14 @@ class CoverMenu {
 	 *
 	 * @elgg_plugin_hook register menu:cover
 	 *
-	 * @param Hook $hook Hook
+	 * @param Event $event Event
 	 *
 	 * @return \ElggMenuItem[]
 	 */
-	public function __invoke(Hook $hook) {
+	public function __invoke(Event $event) {
 
-		$menu = $hook->getValue();
-		$entity = $hook->getEntityParam();
+		$menu = $event->getValue();
+		$entity = $event->getEntityParam();
 
 		if (!$entity) {
 			return;

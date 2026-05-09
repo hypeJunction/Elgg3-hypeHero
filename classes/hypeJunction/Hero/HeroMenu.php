@@ -2,7 +2,7 @@
 
 namespace hypeJunction\Hero;
 
-use Elgg\Hook;
+use Elgg\Event;
 
 class HeroMenu {
 
@@ -11,13 +11,13 @@ class HeroMenu {
 	 *
 	 * @elgg_plugin_hook register menu:hero
 	 *
-	 * @param Hook $hook Hook
+	 * @param Event $event Event
 	 *
 	 * @return void
 	 */
-	public function __invoke(Hook $hook) {
+	public function __invoke(Event $event) {
 
-		$menu = $hook->getValue();
+		$menu = $event->getValue();
 
 		$get_first_segment = function($url) {
 			$site_url = elgg_get_site_url();
@@ -52,7 +52,7 @@ class HeroMenu {
 			}
 		}
 
-		$entity = $hook->getEntityParam();
+		$entity = $event->getEntityParam();
 		if ($entity instanceof \ElggUser || $entity instanceof \ElggGroup) {
 			$menu[] = \ElggMenuItem::factory([
 				'name' => 'profile',

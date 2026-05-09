@@ -2,7 +2,7 @@
 
 namespace hypeJunction\Hero;
 
-use Elgg\Hook;
+use Elgg\Event;
 use Elgg\IntegrationTestCase;
 
 class HeroMenuTest extends IntegrationTestCase {
@@ -20,12 +20,12 @@ class HeroMenuTest extends IntegrationTestCase {
 	public function testReturnsNullWhenEntityIsNotUserOrGroup(): void {
 		$object = $this->createObject(['subtype' => 'page']);
 
-		$hook = $this->getMockBuilder(Hook::class)->getMock();
-		$hook->method('getValue')->willReturn([]);
-		$hook->method('getEntityParam')->willReturn($object);
+		$event = $this->getMockBuilder(Event::class)->disableOriginalConstructor()->getMock();
+		$event->method('getValue')->willReturn([]);
+		$event->method('getEntityParam')->willReturn($object);
 
 		$handler = new HeroMenu();
-		$result = $handler($hook);
+		$result = $handler($event);
 
 		$this->assertSame([], $result);
 	}
@@ -33,12 +33,12 @@ class HeroMenuTest extends IntegrationTestCase {
 	public function testAppendsProfileMenuItemForUser(): void {
 		$user = $this->createUser();
 
-		$hook = $this->getMockBuilder(Hook::class)->getMock();
-		$hook->method('getValue')->willReturn([]);
-		$hook->method('getEntityParam')->willReturn($user);
+		$event = $this->getMockBuilder(Event::class)->disableOriginalConstructor()->getMock();
+		$event->method('getValue')->willReturn([]);
+		$event->method('getEntityParam')->willReturn($user);
 
 		$handler = new HeroMenu();
-		$result = $handler($hook);
+		$result = $handler($event);
 
 		$this->assertIsArray($result);
 		$this->assertNotEmpty($result);
@@ -50,12 +50,12 @@ class HeroMenuTest extends IntegrationTestCase {
 	public function testAppendsProfileMenuItemForGroup(): void {
 		$group = $this->createGroup();
 
-		$hook = $this->getMockBuilder(Hook::class)->getMock();
-		$hook->method('getValue')->willReturn([]);
-		$hook->method('getEntityParam')->willReturn($group);
+		$event = $this->getMockBuilder(Event::class)->disableOriginalConstructor()->getMock();
+		$event->method('getValue')->willReturn([]);
+		$event->method('getEntityParam')->willReturn($group);
 
 		$handler = new HeroMenu();
-		$result = $handler($hook);
+		$result = $handler($event);
 
 		$this->assertIsArray($result);
 
@@ -66,12 +66,12 @@ class HeroMenuTest extends IntegrationTestCase {
 	public function testProfileMenuItemPointsToEntityUrl(): void {
 		$user = $this->createUser();
 
-		$hook = $this->getMockBuilder(Hook::class)->getMock();
-		$hook->method('getValue')->willReturn([]);
-		$hook->method('getEntityParam')->willReturn($user);
+		$event = $this->getMockBuilder(Event::class)->disableOriginalConstructor()->getMock();
+		$event->method('getValue')->willReturn([]);
+		$event->method('getEntityParam')->willReturn($user);
 
 		$handler = new HeroMenu();
-		$result = $handler($hook);
+		$result = $handler($event);
 
 		$profile = null;
 		foreach ($result as $item) {

@@ -2,20 +2,20 @@
 
 namespace hypeJunction\Hero;
 
-use Elgg\Hook;
+use Elgg\Event;
 
 class DefineCoverSizes {
 
 	/**
 	 * @elgg_plugin_hook entity:cover:sizes all
 	 *
-	 * @param Hook $hook Hook
+	 * @param Event $event Event
 	 *
 	 * @return array|null
 	 */
-	public function __invoke(Hook $hook) {
+	public function __invoke(Event $event) {
 
-		$value = $hook->getValue();
+		$value = $event->getValue();
 
 		$hero = [
 			'w' => 2000,

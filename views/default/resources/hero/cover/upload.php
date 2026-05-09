@@ -12,7 +12,11 @@ elgg_push_entity_breadcrumbs($entity);
 
 $title = elgg_echo('hero:cover:upload');
 
-elgg_push_breadcrumb($title);
+elgg_register_menu_item('breadcrumbs', \ElggMenuItem::factory([
+	'name' => 'cover_upload',
+	'text' => $title,
+	'href' => false,
+]));
 
 $content = elgg_view_form('cover/upload', [
 	'enctype' => 'multipart/form-data',
