@@ -21,7 +21,7 @@ $content = elgg_view_form('cover/upload', [
 ]);
 
 if (elgg_is_xhr()) {
-	elgg_require_js('forms/cover/lightbox');
+	elgg_import_esm('forms/cover/lightbox');
 	echo $content;
 	return;
 }
