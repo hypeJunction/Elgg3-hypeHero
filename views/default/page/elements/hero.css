@@ -1,3 +1,28 @@
+:root {
+	--hero-color-white: #fff;
+	--hero-color-black: #000;
+	--hero-color-white-full: white;
+	--hero-color-overlay: rgba(41, 42, 37, 0.34);
+	--hero-color-owner-name: rgba(255, 255, 255, 0.9);
+	--hero-color-border-subtle: rgba(255, 255, 255, 0.3);
+	--hero-color-imprint: #fff;
+	--hero-color-attribution: rgba(255, 255, 255, 0.3);
+	--hero-text-shadow-on-dark: 1px 1px #000;
+	--hero-text-shadow-play: 1px 1px #000;
+	--hero-owner-name-font-size: 2.2rem;
+	--hero-menu-font-size: 0.8rem;
+	--hero-menu-letter-spacing: 1px;
+	--hero-menu-font-weight: 300;
+	--hero-imprint-font-size: 0.75rem;
+	--hero-attribution-font-size: 10px;
+	--hero-cover-icon-size: 2rem;
+	--hero-cover-icon-border-radius: 50%;
+	--hero-inner-max-width: 80rem;
+	--hero-edit-menu-max-width: 12rem;
+	--hero-border-transition: border 0.5s;
+	--hero-resize-handle-font-size: 1rem;
+}
+
 .elgg-page-default .elgg-page-header > .elgg-inner {
 	max-width: none;
 	padding: 0 !important;
@@ -41,7 +66,7 @@
 .cover-hero-header > .elgg-inner,
 .cover-hero-body > .elgg-inner,
 .cover-hero-footer > .elgg-inner {
-	max-width: 80rem;
+	max-width: var(--hero-inner-max-width);
 	margin: 0 auto;
 	position: relative;
 }
@@ -52,15 +77,15 @@
 
 .elgg-menu-hero > li > a {
 	padding: 1rem;
-	color: #fff;
-	text-shadow: 1px 1px #000;
+	color: var(--hero-color-white);
+	text-shadow: var(--hero-text-shadow-on-dark);
 	text-decoration: none;
 	border-bottom: 4px solid transparent;
-	transition: border 0.5s;
+	transition: var(--hero-border-transition);
 	text-transform: uppercase;
-	font-size: 0.8rem;
-	letter-spacing: 1px;
-	font-weight: 300;
+	font-size: var(--hero-menu-font-size);
+	letter-spacing: var(--hero-menu-letter-spacing);
+	font-weight: var(--hero-menu-font-weight);
 
 }
 
@@ -73,7 +98,7 @@
 }
 
 .elgg-menu-hero-container {
-	border-top: 1px solid rgba(255, 255, 255, 0.3);
+	border-top: 1px solid var(--hero-color-border-subtle);
 }
 
 .elgg-menu-hero > li:hover > a,
@@ -90,22 +115,22 @@
 }
 
 .cover-owner-details > .elgg-image img {
-	border-radius: 50%;
+	border-radius: var(--hero-cover-icon-border-radius);
 }
 
 .cover-hero .cover-owner-name a {
-	font-size: 2.2rem;
+	font-size: var(--hero-owner-name-font-size);
 	line-height: 2.5 . rem;
-	color: rgba(255, 255, 255, 0.9);
-	text-shadow: 1px 1px #000;
+	color: var(--hero-color-owner-name);
+	text-shadow: var(--hero-text-shadow-on-dark);
 	text-decoration: none;
-	font-weight: 300;
+	font-weight: var(--hero-menu-font-weight);
 }
 
 .cover-hero-body .elgg-listing-imprint * {
-	color: #fff;
-	text-shadow: 1px 1px #000;
-	font-size: 0.75rem;
+	color: var(--hero-color-imprint);
+	text-shadow: var(--hero-text-shadow-on-dark);
+	font-size: var(--hero-imprint-font-size);
 }
 
 .cover-hero .cover-owner-details > .elgg-image {
@@ -120,7 +145,7 @@
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(41, 42, 37, 0.34);
+	background-color: var(--hero-color-overlay);
 	content: "";
 }
 
@@ -133,29 +158,29 @@
 }
 
 .elgg-menu-cover > li > a {
-	border: 1px solid rgba(255, 255, 255, 0.3);
-	width: 2rem;
-	height: 2rem;
+	border: 1px solid var(--hero-color-border-subtle);
+	width: var(--hero-cover-icon-size);
+	height: var(--hero-cover-icon-size);
 	text-align: center;
-	line-height: 2rem;
-	border-radius: 50%;
-	color: #fff;
-	text-shadow: 1px 1px #000;
-	font-size: 0.8rem;
+	line-height: var(--hero-cover-icon-size);
+	border-radius: var(--hero-cover-icon-border-radius);
+	color: var(--hero-color-white);
+	text-shadow: var(--hero-text-shadow-on-dark);
+	font-size: var(--hero-menu-font-size);
 	vertical-align: middle;
 	display: inline-block;
 	text-decoration: none;
 
 &
 :hover {
-	color: white;
+	color: var(--hero-color-white-full);
 	background: var(--elgg-background-color-highlight);
 }
 
 }
 
 #cover-edit-menu {
-	max-width: 12rem;
+	max-width: var(--hero-edit-menu-max-width);
 	padding: 0;
 
 .elgg-menu-hover {
@@ -198,13 +223,13 @@
 }
 
 .elgg-menu-action > li > a {
-	box-shadow: 1px 1px #000;
+	box-shadow: var(--hero-text-shadow-on-dark);
 	margin: 2px;
 }
 
 .cover-hero-footer .cover-attribution {
-	color: rgba(255, 255, 255, 0.3);
-	font-size: 10px;
+	color: var(--hero-color-attribution);
+	font-size: var(--hero-attribution-font-size);
 	right: 0;
 	position: absolute;
 	padding: .5rem;
@@ -212,7 +237,7 @@
 }
 
 .cover-hero-footer .cover-attribution a {
-	color: rgba(255, 255, 255, 0.3);
+	color: var(--hero-color-attribution);
 }
 
 .cover-hero-footer .cover-attribution .cover-provider {
@@ -222,12 +247,12 @@
 @media var(--elgg-media-tablet-up) {
 	.cover-hero .ui-resizable-sw:after {
 		content: "\25e2";
-		color: #fff;
+		color: var(--hero-color-white);
 		position: absolute;
 		right: 0;
 		bottom: 0;
-		line-height: 1rem;
-		font-size: 1rem;
+		line-height: var(--hero-resize-handle-font-size);
+		font-size: var(--hero-resize-handle-font-size);
 		margin: 0;
 		cursor: row-resize;
 	}
