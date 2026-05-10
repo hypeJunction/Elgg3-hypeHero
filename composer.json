@@ -17,7 +17,7 @@
         }
     ],
     "extra": {
-        "installer-name": "hypeHero"
+        "installer-name": "hypehero"
     },
     "require": {
         "php": ">=8.3",
@@ -29,5 +29,6 @@
         "psr-0": {
             "": "classes/"
         }
-    }
+    },
+    "version": "2.0.0"
 }
