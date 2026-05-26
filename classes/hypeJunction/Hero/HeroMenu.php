@@ -20,7 +20,7 @@ class HeroMenu {
 		$menu = $hook->getValue();
 
 		$get_first_segment = function($url) {
-			$site_url = elgg_get_site_url();
+			$site_url = \elgg_get_site_url();
 
 			if (strpos($url, $site_url) !== 0) {
 				return false;
@@ -43,7 +43,7 @@ class HeroMenu {
 
 		foreach ($menu as $item) {
 			/* @var $item \ElggMenuItem */
-			$url = elgg_normalize_url($item->getHref());
+			$url = \elgg_normalize_url($item->getHref());
 
 			$item_segment = $get_first_segment($url);
 
@@ -57,7 +57,7 @@ class HeroMenu {
 			$menu[] = \ElggMenuItem::factory([
 				'name' => 'profile',
 				'priority' => 50,
-				'text' => elgg_echo('profile'),
+				'text' => \elgg_echo('profile'),
 				'href' => $entity->getURL(),
 			]);
 		}
