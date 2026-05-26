@@ -40,7 +40,7 @@ class CoverUploadActionTest extends IntegrationTestCase {
 			'access_id' => ACCESS_PUBLIC,
 		]);
 
-		elgg_get_session()->setLoggedInUser($other);
+		\elgg_get_session()->setLoggedInUser($other);
 
 		try {
 			$request = $this->getMockBuilder(Request::class)
@@ -53,7 +53,7 @@ class CoverUploadActionTest extends IntegrationTestCase {
 			$this->expectException(EntityPermissionsException::class);
 			$action($request);
 		} finally {
-			elgg_get_session()->removeLoggedInUser();
+			\elgg_get_session()->removeLoggedInUser();
 		}
 	}
 }

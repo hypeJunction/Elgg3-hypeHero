@@ -26,7 +26,7 @@ class CoverUploadAction {
 		if (!$entity->saveIconFromUploadedFile('cover', 'cover')) {
 			$error = $request->elgg()->echo('hero:cover:upload:error');
 
-			return elgg_error_response($error);
+			return \elgg_error_response($error);
 		}
 
 		unset($entity->{'cover:uid'});
@@ -58,7 +58,7 @@ class CoverUploadAction {
 		$msg = $request->elgg()->echo('hero:cover:upload:success');
 		$url = $entity->getURL();
 
-		return elgg_ok_response([
+		return \elgg_ok_response([
 			'cover_url' => $entity->getIconURL(['type' => 'cover', 'size' => 'hero']),
 		], $msg, $url);
 
