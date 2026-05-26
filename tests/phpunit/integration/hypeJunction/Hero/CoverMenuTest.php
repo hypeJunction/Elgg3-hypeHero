@@ -32,7 +32,7 @@ class CoverMenuTest extends IntegrationTestCase {
 		$user = $this->createUser();
 
 		// Logged-in user is the entity owner — canEdit() returns true.
-		_elgg_services()->session_manager->setLoggedInUser($user);
+		\_elgg_services()->session_manager->setLoggedInUser($user);
 
 		try {
 			$event = $this->getMockBuilder(Event::class)->disableOriginalConstructor()->getMock();
@@ -46,13 +46,13 @@ class CoverMenuTest extends IntegrationTestCase {
 			$names = array_map(fn(\ElggMenuItem $i) => $i->getName(), $result);
 			$this->assertContains('cover:upload', $names);
 		} finally {
-			_elgg_services()->session_manager->removeLoggedInUser();
+			\_elgg_services()->session_manager->removeLoggedInUser();
 		}
 	}
 
 	public function testCoverUploadHrefMatchesGeneratedRoute(): void {
 		$user = $this->createUser();
-		_elgg_services()->session_manager->setLoggedInUser($user);
+		\_elgg_services()->session_manager->setLoggedInUser($user);
 
 		try {
 			$event = $this->getMockBuilder(Event::class)->disableOriginalConstructor()->getMock();
@@ -71,10 +71,10 @@ class CoverMenuTest extends IntegrationTestCase {
 			}
 
 			$this->assertInstanceOf(\ElggMenuItem::class, $upload);
-			$expected = elgg_generate_url('cover:upload', ['guid' => $user->guid]);
+			$expected = \elgg_generate_url('cover:upload', ['guid' => $user->guid]);
 			$this->assertSame($expected, $upload->getHref());
 		} finally {
-			_elgg_services()->session_manager->removeLoggedInUser();
+			\_elgg_services()->session_manager->removeLoggedInUser();
 		}
 	}
 }

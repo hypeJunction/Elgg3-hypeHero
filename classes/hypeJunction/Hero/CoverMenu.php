@@ -29,7 +29,7 @@ class CoverMenu {
 				'name' => 'edit',
 				'href' => '#',
 				'text' => '',
-				'title' => elgg_echo('hero:cover:edit'),
+				'title' => \elgg_echo('hero:cover:edit'),
 				'icon' => 'pencil',
 				'child_menu' => [
 					'display' => 'dropdown',
@@ -47,7 +47,7 @@ class CoverMenu {
 				'name' => 'cover',
 				'href' => '#',
 				'text' => '',
-				'title' => elgg_echo('hero:cover:edit'),
+				'title' => \elgg_echo('hero:cover:edit'),
 				'icon' => 'camera',
 				'child_menu' => [
 					'display' => 'dropdown',
@@ -64,9 +64,9 @@ class CoverMenu {
 			$menu[] = \ElggMenuItem::factory([
 				'name' => 'cover:upload',
 				'parent_name' => 'cover',
-				'text' => elgg_echo('hero:cover:upload'),
+				'text' => \elgg_echo('hero:cover:upload'),
 				'icon' => 'upload',
-				'href' => elgg_generate_url('cover:upload', [
+				'href' => \elgg_generate_url('cover:upload', [
 					'guid' => $entity->guid,
 				]),
 				'class' => 'elgg-lightbox',
@@ -80,9 +80,9 @@ class CoverMenu {
 				$menu[] = \ElggMenuItem::factory([
 					'name' => 'profile:edit',
 					'parent_name' => 'edit',
-					'text' => elgg_echo('profile:edit'),
+					'text' => \elgg_echo('profile:edit'),
 					'icon' => 'pencil',
-					'href' => elgg_generate_url('edit:user', [
+					'href' => \elgg_generate_url('edit:user', [
 						'username' => $entity->username,
 					]),
 				]);
@@ -90,9 +90,9 @@ class CoverMenu {
 				$menu[] = \ElggMenuItem::factory([
 					'name' => 'avatar:edit',
 					'parent_name' => 'edit',
-					'text' => elgg_echo('avatar:edit'),
+					'text' => \elgg_echo('avatar:edit'),
 					'icon' => 'user-circle',
-					'href' => elgg_generate_url('edit:user:avatar', [
+					'href' => \elgg_generate_url('edit:user:avatar', [
 						'username' => $entity->username,
 					]),
 				]);
@@ -114,8 +114,8 @@ class CoverMenu {
 				$menu[] = \ElggMenuItem::factory([
 					'name' => 'groups:edit',
 					'parent_name' => 'edit',
-					'href' => elgg_generate_entity_url($entity, 'edit'),
-					'text' => elgg_echo('groups:edit'),
+					'href' => \elgg_generate_entity_url($entity, 'edit'),
+					'text' => \elgg_echo('groups:edit'),
 					'icon' => 'pencil',
 				]);
 			}
