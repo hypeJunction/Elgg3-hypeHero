@@ -39,7 +39,7 @@ class HeroMenu {
 			return $segment;
 		};
 
-		$selected_segment = $get_first_segment(current_page_url());
+		$selected_segment = $get_first_segment(elgg_get_current_url());
 
 		foreach ($menu as $item) {
 			/* @var $item \ElggMenuItem */
