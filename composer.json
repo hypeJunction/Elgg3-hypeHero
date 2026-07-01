@@ -1,33 +1,34 @@
 {
-    "name": "hypejunction/hypehero",
-    "type": "elgg-plugin",
-    "description": "Replaces the owner block with a full-width cover hero image for profiles and groups.",
-    "homepage": "https://github.com/hypeJunction/Elgg3-hypeHero",
-    "keywords": [
-        "elgg",
-        "plugin",
-        "autocomplete",
-        "forms"
-    ],
-    "license": "GPL-2.0-or-later",
-    "authors": [
-        {
-            "name": "Ismayil Khayredinov",
-            "email": "ismayil.khayredinov@gmail.com"
-        }
-    ],
-    "extra": {
-        "installer-name": "hypehero"
-    },
-    "require": {
-        "php": ">=8.3",
-        "ext-intl": "*",
-        "composer/installers": "^2.0",
-        "elgg/elgg": "~7.0.0"
-    },
-    "autoload": {
-        "psr-0": {
-            "": "classes/"
-        }
+  "name": "hypejunction/hypehero",
+  "type": "elgg-plugin",
+  "description": "Replaces the owner block with a full-width cover hero image for profiles and groups.",
+  "homepage": "https://github.com/hypeJunction/Elgg3-hypeHero",
+  "keywords": [
+    "elgg",
+    "plugin",
+    "autocomplete",
+    "forms"
+  ],
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Ismayil Khayredinov",
+      "email": "ismayil.khayredinov@gmail.com"
     }
+  ],
+  "extra": {
+    "installer-name": "hypehero"
+  },
+  "require": {
+    "php": ">=8.3",
+    "ext-intl": "*",
+    "composer/installers": "^2.0",
+    "elgg/elgg": "~7.0.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "hypeJunction\\\\Hero\\\\": "classes/hypeJunction/Hero/"
+    }
+  },
+  "version": "2.0.0"
 }
